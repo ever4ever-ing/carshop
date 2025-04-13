@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Comprar Auto: {{ auto.marca }} {{ auto.modelo }}</h1>
+    <form method="POST">
+        <label>Cliente:</label>
+        <select name="cliente_id" required>
+            {% for cliente in clientes %}
+                <option value="{{ cliente.id }}">{{ cliente.nombre }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Confirmar Compra</button>
+    </form>
+{% endblock %}

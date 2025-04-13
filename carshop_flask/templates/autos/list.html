@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Lista de Autos</h1>
+    <a href="{{ url_for('autos.crear_auto') }}">Nuevo Auto</a>
+    <ul>
+        {% for auto in autos %}
+            <li>
+                {{ auto.marca }} {{ auto.modelo }} - ${{ auto.precio }}
+                <a href="{{ url_for('autos.editar_auto', id=auto.id) }}">Editar</a>
+                <a href="{{ url_for('autos.eliminar_auto', id=auto.id) }}">Eliminar</a>
+                <a href="{{ url_for('clientes.comprar_auto', auto_id=auto.id) }}">Vender</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

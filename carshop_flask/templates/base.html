@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tittle %} Carshop {% endblock %} </title>
+</head>
+<body>
+    <nav>
+        <!-- url_for: usa la función para generar la URL de la vista 'list_autos' del blueprint 'autos' -->
+        <a href="{{ url_for('autos.list_autos') }}">Autos</a>
+        a <a href="{{ url_for('clientes.crear_cliente') }}">Clientes</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

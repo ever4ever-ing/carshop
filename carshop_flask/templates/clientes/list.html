@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Clientes</h1>
+    <a href="{{ url_for('clientes.crear_cliente') }}">Nuevo Cliente</a>
+    <ul>
+        {% for cliente in clientes %}
+            <li>
+                {{ cliente.nombre }} ({{ cliente.email }})
+                <a href="#">Historial de Compras</a>  <!-- Opcional -->
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
